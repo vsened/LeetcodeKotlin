@@ -1,0 +1,5 @@
+package containsDuplicate
+
+class ContainsDuplicate {
+
+}
