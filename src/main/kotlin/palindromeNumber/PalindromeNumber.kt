@@ -19,9 +19,14 @@ class PalindromeNumber {
     }
 
     /**
-     * math manipulation
+     * Another string way
      */
-    fun isPalindrome2(x: Int): Boolean {
+    fun isPalindrome2(x: Int): Boolean = "$x" == "$x".reversed()
+
+    /**
+     * Math manipulation
+     */
+    fun isPalindrome3(x: Int): Boolean {
         var number = x
         var reverseNumber: Int = 0
         while (number > 0){
@@ -32,4 +37,10 @@ class PalindromeNumber {
             return true
         return false
     }
+
+    /**
+     * Using lambda
+     */
+    fun isPalindrome4(x: Int): Boolean = x.toString().let { it == it.reversed() }
+
 }

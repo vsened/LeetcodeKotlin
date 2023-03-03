@@ -8,6 +8,9 @@ package containsDuplicate
  * is distinct.
  */
 class ContainsDuplicate {
+    /**
+     * Using HashMap
+     */
     fun containsDuplicate(nums: IntArray): Boolean {
         val hashMap = mutableMapOf<Int, Int>()
         for (i in nums){
@@ -18,4 +21,12 @@ class ContainsDuplicate {
         }
         return false
     }
+    /**
+     * Using HashSet
+     */
+    fun containsDuplicate2(nums: IntArray): Boolean {
+        val set = nums.toHashSet()
+        return set.size != nums.size
+    }
+
 }

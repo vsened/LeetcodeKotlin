@@ -24,15 +24,15 @@ class RemoveLinkedListElements {
         if (head == null)
             return head
         val newHead: ListNode? = ListNode(0)
-        newHead!!.next = head
+        newHead?.next = head
         var currentNode: ListNode? = newHead
-        while (currentNode!!.next != null){
-            if (currentNode.next!!.`val` == `val`){
-                currentNode.next = currentNode.next!!.next
+        while (currentNode?.next != null){
+            if (currentNode.next?.`val` == `val`){
+                currentNode.next = currentNode.next?.next
                 continue
             }
             currentNode = currentNode.next
         }
-        return newHead.next
+        return newHead?.next
     }
 }
