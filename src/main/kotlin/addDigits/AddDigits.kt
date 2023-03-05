@@ -21,7 +21,9 @@ class AddDigits {
             return addDigits(sum)
         }
     }
-
+    /**
+     * Math manipulation
+     */
     fun addDigits2(num: Int): Int {
         if (num < 10)
             return num;
