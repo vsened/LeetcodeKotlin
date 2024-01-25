@@ -39,4 +39,43 @@ class UniqueEmailAddresses {
         }
         return dict.size
     }
+
+    fun numUniqueEmails2(emails: Array<String>): Int {
+        val uniqueEmails = HashSet<String>()
+        for (email in emails) {
+            val currentEmail = email.split("@")
+            val user = currentEmail[0].split("+")[0].replace(".", "").lowercase() +
+                    "@${currentEmail[1]}"
+            uniqueEmails.add(user)
+        }
+        return uniqueEmails.size
+    }
+
+    fun numUniqueEmails3(emails: Array<String>): Int {
+        val set = mutableSetOf<String>()
+        for (email in emails) {
+            set.add(normalize(email))
+        }
+        return set.size
+    }
+
+    private fun normalize(email: String): String {
+        return buildString {
+            var i = 0
+            while (i < email.length) {
+                when (email[i]) {
+                    '.' -> {}
+                    '@', '+' -> break
+                    else -> append(email[i])
+                }
+                i++
+            }
+            while (i < email.length) {
+                if (email[i] == '@') break
+                i++
+            }
+            appendRange(email, i, email.length)
+        }
+    }
+
 }

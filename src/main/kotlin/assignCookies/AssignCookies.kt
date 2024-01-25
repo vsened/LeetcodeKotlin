@@ -28,20 +28,20 @@ class AssignCookies {
     }
 
     fun findContentChildren2(g: IntArray, s: IntArray): Int {
-        g.sort();
-        s.sort();
-        var content = 0;
-        var kid = 0;
-        var cookie = 0;
+        g.sort()
+        s.sort()
+        var content = 0
+        var kid = 0
+        var cookie = 0
         while (kid < g.size && cookie < s.size) {
             if (g[kid] <= s[cookie]) {
-                content++;
-                kid++;
-                cookie++;
+                content++
+                kid++
+                cookie++
             } else {
-                cookie++;
+                cookie++
             }
         }
-        return content;
+        return content
     }
 }

@@ -11,4 +11,32 @@ class ReverseWordsInAStringIII {
         }
         return words.joinToString(" ")
     }
+
+    fun reverseWords2(s: String) = s.split(" ").joinToString(" ") { word -> word.reversed() }
+
+    fun reverseWords3(s: String): String {
+        val result = CharArray(s.length)
+        var wordStart = 0
+        var nextWord = 0
+        var nextSpace = 0
+
+        while (nextWord < s.length) {
+            while (nextSpace < s.length && s[nextSpace] != ' ') nextSpace++
+
+            nextWord = nextSpace + 1
+
+            while (wordStart != nextWord - 1) {
+                result[wordStart] = s[nextSpace - 1]
+                wordStart++
+                nextSpace--
+            }
+
+            if (wordStart < s.length) {
+                result[wordStart] = s[wordStart]
+            }
+            wordStart++
+            nextSpace = wordStart
+        }
+        return result.toString()
+    }
 }

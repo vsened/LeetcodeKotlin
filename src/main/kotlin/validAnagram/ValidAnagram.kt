@@ -24,4 +24,8 @@ class ValidAnagram {
         }
         return true
     }
+
+    fun isAnagram2(s: String, t: String): Boolean =
+        s.groupingBy { it }.eachCount() == t.groupingBy { it }.eachCount()
+
 }

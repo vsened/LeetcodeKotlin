@@ -28,5 +28,15 @@ class ContainsDuplicate {
         val set = nums.toHashSet()
         return set.size != nums.size
     }
-
+    /**
+     * Using HashSet
+     */
+    fun containsDuplicate3(nums: IntArray): Boolean {
+        val tmp = hashSetOf<Int>()
+        for (i in nums) {
+            if (i in tmp) return true
+            tmp.add(i)
+        }
+        return false
+    }
 }
